@@ -1,0 +1,1 @@
+GRANT ALL PRIVILEGES ON *.* TO 'est_admin'@'localhost' IDENTIFIED BY '123456';

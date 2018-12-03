@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Nuevo Usuario</title>
+        {% include "web/generic_header.html" %}
+    </head>
+    <body class="blue lighten-5">
+        <div class="container">
+                <form method="post" class="row">{% csrf_token %} 
+                        <div class="col s12 m12 s12 center">
+                            <H1>Nuevo Usuario</H1>
+                        </div>
+                        {% if form.errors %}
+                        {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}   
+                            <div class="col s12 m6 l6">
+                                {% if field.id_for_label == 'id_discapacitado'%}
+                                <label for="{{field.id_for_label}}">
+                                    {{field}}<span>{{field.label}}</span>
+                                </label>
+                                {% else %}
+                                {{field.label_tag}} {{field}}
+                                {% endif %}
+                            </div>
+                        {% endfor %}    
+                        <div class="col s12 m12 s12 center">
+                            <input type="submit" value="Aceptar" />
+                        </div>    
+                </form>
+        </div>
+    </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        M.AutoInit();
+    });
+</script>

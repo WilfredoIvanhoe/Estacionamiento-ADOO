@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Nuevo Usuario</title>
+        {% include "web/generic_header.html" %}
+    </head>
+    {% include "web/navbar.html" %}
+    <hr>
+    <body class="blue lighten-5">
+        <div class="container">
+            <div class="center">
+                <h1>Información personal</h1>
+            </div>
+            <div class="row">{% csrf_token %} 
+                    <table class="blue lighten-4">
+                        <thead>
+                            <tr class="blue accent-3">
+                                <th>Número Identificador</th>
+                                <th>Nombre de usuario</th>
+                                <th>Nombres</th>
+                                <th>Apellido paterno</th>
+                                <th>Apellido materno</th>
+                                <th>Telefono</th>
+                                <th>Tipo de usuario</th>
+                                <th>Discapacitado</th>
+                                <th>Cuenta Activa</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>{{object.num_id}}</td>
+                                <td>{{object.usuario}}</td>
+                                <td>{{object.nombres}}</td>
+                                <td>{{object.a_paterno}}</td>
+                                <td>{{object.a_materno}}</td>
+                                <td>{{object.telefono}}</td>
+                                <td>{{object.get_tipo_usuario_display}}</td>
+                                <td>{{object.discapacitado}}</td>
+                                <td>{{object.activo}}</td>
+                            </tr>
+                        </tbody>
+                    </table>    
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        M.AutoInit();
+    });
+</script>
