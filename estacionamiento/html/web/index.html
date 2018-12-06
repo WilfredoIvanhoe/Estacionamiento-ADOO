@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+    <head>
+        <title>Nuevo Usuario</title>
+        {% include "web/generic_header.html" %}
+    </head>
+    <body>
+        {% include "web/navbar.html" %}
+        <div class="row center">
+            <div class="col s12 m4 offset-m4">
+                <div class="card">
+                <div class="card-image">
+                    <img src="{% static "web/images/estacionamiento.png" %}">
+                    <span class="card-title">Administración</span>
+                </div>
+                <div class="card-content">
+                    <p>Ingrese en el siguiente enlace para acceder al panel de administracion.</p>
+                </div>
+                <div class="card-action">
+                    <a href="/admin/">Panel</a>
+                </div>
+                </div>
+            </div>
+        </div>  
+        <div class="row center">
+                <div class="col s12 m4 offset-m4">
+                    <div class="card">
+                    <div class="card-image">
+                        <img src="{% static "web/images/estacionamiento.png" %}">
+                        <span class="card-title">Usuarios</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Ingrese en el siguiente enlace para registrarse o iniciar sesión.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="/usuario/new/">Registrarse</a>
+                        <a href="/usuario/login/">Iniciar Sesión</a>
+                    </div>
+                    </div>
+                </div>
+            </div>                 
+    </body>
+</html>

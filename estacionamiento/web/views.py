@@ -4,10 +4,11 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from web.models import Usuario
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, "web/index.html", {})
 
 #VISTAS PARA USUARIOS
 class UserCreate(CreateView):
@@ -17,3 +18,6 @@ class UserCreate(CreateView):
 
 class UserDetailView(DetailView):
     model = Usuario
+
+def UserLogin(request):
+    return render(request, "web/login.html", {})

@@ -18,6 +18,10 @@ class Usuario(models.Model):
         (3, 'Alumno'),
         (4, 'Directivo'),
     )
+    
+    def __str__(self):
+            return self.num_id
+
     user = models.AutoField(primary_key=True)
     num_id = models.CharField('número identificador', max_length=30,unique=True)
     usuario = models.CharField('nombre de usuario', max_length=30)

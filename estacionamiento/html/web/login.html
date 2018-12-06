@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Nuevo Usuario</title>
+        {% include "web/generic_header.html" %}
+    </head>
+    <hr>
+    <body>
+        {% include "web/navbar.html" %}
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Login</button>
+        </form>
+    </body>
+</html>
